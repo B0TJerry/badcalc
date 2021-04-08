@@ -8,7 +8,7 @@ As of making this work on anything except linux is far beyond me and my coding s
 * add probability funtions
 * eventually make a working gui
 * add ability to just accept take an equation and answer it
-* add ability to optionally add, subtract, etc. more than just two terms
+* add ability to add, subtract, etc. more than just two terms
 * add ability to not show the option typed by the user
 * add ability to optionally use a string like multiply or just use an int like 1
 * make sure that the code doesnt turn into a mess of spagetti code that is unreadable
