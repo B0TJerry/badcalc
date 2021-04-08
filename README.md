@@ -1,3 +1,4 @@
+![Screenshot_20210408_1r64205](https://user-images.githubusercontent.com/81500962/114094160-f9927a80-9889-11eb-8c02-aaaa9ce9bd4c.png)
 # Badcalc
 This is a horrible little calculator that I am making in C++ with my questionable coding skills, all while teaching myself c++ at the same time. The goal of this project is not for the code to be well written or look nice, but a personal challenge to make a calculator from scratch while being new to programming and C++. I might consider adding more features, but who knows I might just get bored of this little pet project of mine. This repository didn't start with the project, I just got bored on one rainy Thursday morning and decided to upload this joke of a calcuator to my github.
 ## installation
