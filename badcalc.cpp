@@ -9,8 +9,7 @@ int main() {
  ______   ______   _____    ______  ______   _        ______ 
 | |  | \ | |  | | | | \ \  | |     | |  | | | |      | |     
 | |--| < | |__| | | |  | | | |     | |__| | | |   _  | |     
-|_|__|_/ |_|  |_| |_|_/_/  |_|____ |_|  |_| |_|__|_| |_|____ 
-    )" << '\n';
+|_|__|_/ |_|  |_| |_|_/_/  |_|____ |_|  |_| |_|__|_| |_|____ )" << '\n';
     cout << "--------------------------------------------------------------\n|1.Multiply|2.Divide|3.Add|4.Subtract|5.SquareRoot|6.Exponent|\n--------------------------------------------------------------\n";
     cin >> calcmode;
     if (calcmode == 1) {
@@ -37,6 +36,6 @@ int main() {
         cout << "Please enter the base and exponent.\n";
         cin >> num1 >> num2;
         cout << num1 << " to the power of " << num2 << " is " << pow(num1, num2) << ".\n";}
-    else {
+    else if (calcmode > 6) {
         cout << "Please enter a valid calculator action.\n";}                                           
     return 0;}
