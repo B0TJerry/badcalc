@@ -3,8 +3,7 @@
 using namespace std;
 int main() {
     int calcmode = 0;                 //declares a integer varible with the name calcmode, decides what should be done (multipliction, division, etc.)
-    double num1 = 0;                  //declares an floating point variable with the name num1
-    double num2 = 0;                  //declares an floating point variable with the name num2
+    double num1, num2 = 0;            //declares 2 floating point variables with the name of num1 and num2
     cout << R"( ___    __    ___   __     __    _     __   
 | |_)  / /\  | | \ / /`   / /\  | |   / /`  
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )" << '\n';
