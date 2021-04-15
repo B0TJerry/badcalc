@@ -31,7 +31,7 @@ int main() {
 
   cin >> calcmode;
 
-  if (calcmode == "1")
+  if (calcmode == "1" || calcmode == "Multiply")
   /*not sure if I should keep this a string and find out how
   to accept a number or the name of the mode, I might change this from time to time*/
 
@@ -45,7 +45,7 @@ int main() {
   /*instead of using another floating point value and namin it ans I just
   took out the ans and just made it solve the problem in the answer
   statement*/
-  else if (calcmode == "2")
+  else if (calcmode == "2" || calcmode == "Divide")
 
   {
     cout << "-----------------------------------------------------\n"
@@ -56,7 +56,7 @@ int main() {
     cout << num1 << " / " << num2 << " = " << num1 / num2 << "\n";
   }
 
-  else if (calcmode == "3")
+  else if (calcmode == "3" || calcmode == "Add")
 
   {
     cout << "-----------------------------------------------\n"
@@ -66,7 +66,7 @@ int main() {
     cout << num1 << " + " << num2 << " = " << num1 + num2 << "\n";
   }
 
-  else if (calcmode == "4")
+  else if (calcmode == "4" || calcmode == "Subtract")
 
   {
     cout << "------------------------------------------------------\n"
@@ -77,7 +77,7 @@ int main() {
     cout << num1 << " - " << num2 << " = " << num1 - num2 << "\n";
   }
 
-  else if (calcmode == "5")
+  else if (calcmode == "5" || calcmode == "SquareRoot")
 
   {
     cout << "--------------------------------------------------"
@@ -87,7 +87,7 @@ int main() {
     cout << "The Square Root of " << num1 << " is " << sqrt(num1) << ".\n";
   }
 
-  else if (calcmode == "6")
+  else if (calcmode == "6" || calcmode == "Exponent")
 
   {
     cout << "-------------------------------------------------\n"
@@ -97,7 +97,7 @@ int main() {
     cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << "\n";
   }
 
-  else if (calcmode == "7")
+  else if (calcmode == "7" || calcmode == "SumOfFiniteGSrs")
    
   {
     double num3, num4;
@@ -113,7 +113,7 @@ int main() {
   user chooses this option because I could only get it down to that level,
   hopefully I can in the future*/
 
-  else if (calcmode == "8")
+  else if (calcmode == "8" || calcmode == "GeoSeqRule")
 
   {
     double num3, num4;
