@@ -32,9 +32,13 @@ int main() {
   cin >> calcmode;
 
   if (calcmode == "1")
+  /*not sure if I should keep this a string and find out how
+  to accept a number or the name of the mode, I might change this from time to time*/
 
   {
-    cout << "Please enter two numbers to multiply by together.\n";
+    cout << "---------------------------------------------------\n"
+         << "|Please enter two numbers to multiply by together.|\n"
+         << "---------------------------------------------------\n";
     cin >> num1 >> num2; // reads 1 floating point values into num1 and num2
     cout << num1 << " * " << num2 << " = " << num1 * num2 << "\n";
   }
@@ -44,7 +48,9 @@ int main() {
   else if (calcmode == "2")
 
   {
-    cout << "Please enter two numbers to divide by eachother by.\n";
+    cout << "-----------------------------------------------------\n"
+         << "|Please enter two numbers to divide by eachother by.|\n"
+         << "-----------------------------------------------------\n";
     cin >> num1 >>
         num2; // reads 1 floating point values into num1 and num2 each
     cout << num1 << " / " << num2 << " = " << num1 / num2 << "\n";
@@ -53,7 +59,9 @@ int main() {
   else if (calcmode == "3")
 
   {
-    cout << "Please enter two numbers to add to eachother.\n";
+    cout << "-----------------------------------------------\n"
+         << "|Please enter two numbers to add to eachother.|\n"
+         << "-----------------------------------------------\n";
     cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
     cout << num1 << " + " << num2 << " = " << num1 + num2 << "\n";
   }
@@ -61,16 +69,20 @@ int main() {
   else if (calcmode == "4")
 
   {
-    cout << "Please enter two numbers to subtract from eachother.\n";
-    cin >> num1 >>
-        num2; /* reads 1 floating point values into num1 and num2 each */
+    cout << "------------------------------------------------------\n"
+         << "|Please enter two numbers to subtract from eachother.|\n"
+         << "------------------------------------------------------\n";
+    cin >> num1 >> num2;
+    /* reads 1 floating point values into num1 and num2 each */
     cout << num1 << " - " << num2 << " = " << num1 - num2 << "\n";
   }
 
   else if (calcmode == "5")
 
   {
-    cout << "Please enter a number to get the square root of.\n";
+    cout << "--------------------------------------------------"
+         << "|Please enter a number to get the square root of.|\n"
+         << "--------------------------------------------------";
     cin >> num1; // reads 1 floating point value into num1
     cout << "The Square Root of " << num1 << " is " << sqrt(num1) << ".\n";
   }
@@ -78,7 +90,9 @@ int main() {
   else if (calcmode == "6")
 
   {
-    cout << "Please enter the base and exponent.\n";
+    cout << "-------------------------------------------------\n"
+         << "|Please enter the base First, then the exponent.|\n"
+         << "-------------------------------------------------\n";
     cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
     cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << "\n";
   }
@@ -87,7 +101,9 @@ int main() {
    
   {
     double num3, num4;
-    cout << "Please enter R, A1, and N\n";
+    cout << "---------------------------\n"
+         << "|Please enter R, A1, and N|\n"
+         << "---------------------------\n";
     cin >> num1/*R*/ >> num2/*A1*/ >> num3/*N*/;
     num4 = (1 - pow(num1, num3)) / (1 - num1); 
     cout << "The answer is " << num4 * num2 << ".\n";
@@ -101,7 +117,9 @@ int main() {
 
   {
     double num3, num4;
-    cout << "Please enter R and An with its subscript sepreated from it\n";
+    cout << "------------------------------------------------------------\n"
+         << "|Please enter R and An with its subscript sepreated from it|\n"
+         << "------------------------------------------------------------\n";
     cin >> num1/*R*/ >> num2/*A w/o the n*/ >> num3/*n*/;
     cout << num2 << " = (A1) * " << num1 << "^" << num3 << " - 1\n";
     num4 = num2/pow(num1, num3-1);
@@ -112,10 +130,13 @@ int main() {
   else
 
   {
-    cout << "Please enter a valid calculator action.\n";
+    cout << "-----------------------------------------\n"
+         << "|Please enter a valid calculator action.|\n"
+         << "-----------------------------------------\n";
   }
   
-  /*puts out text telling them to enter a valid mode if they didn't type a
-  valid number, not sure if this is a good way to do it. */
+    /*puts out text telling them to enter a valid mode if they didn't type a
+    valid number, not sure if this is a good way to do it. */
 
-  return 0;}
+  return 0;
+}
