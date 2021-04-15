@@ -8,19 +8,27 @@ int main() {
 
   string calcmode = "0";
     
-         /* declares a integer varible with the name calcmode, decides what
-            should be done (multipliction, division, etc.) */
-  double num1, num2 = 0; /* declares 2 floating point variables with the name of
-                            num1 and num2 */
+  /* declares a integer varible with the name calcmode, decides what
+     should be done (multipliction, division, etc.) */
+  
+  double num1 = 0, num2 = 0;
+  
+  /* declares 2 floating point variables with the name of
+     num1 and num2 */
+  
   cout << R"(
  ___    __    ___   __     __    _     __
 | |_)  / /\  | | \ / /`   / /\  | |   / /`
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )"
        << '\n';
 
-  cout << "--------------------------------------------------------------\n|1."
-          "Multiply|2.Divide|3.Add|4.Subtract|5.SquareRoot|6.Exponent|\n-------"
-          "-------------------------------------------------------\n";
+  cout <<
+    "--------------------------------------------------------------\n"
+    "|1.Multiply|2.Divide|3.Add|4.Subtract|5.SquareRoot|6.Exponent|\n"
+    "--------------------------------------------------------------\n"
+    "|7.SumOfFiniteGSrs|8.GeoSeqRule|\n"
+    "--------------------------------\n";
+
   cin >> calcmode;
 
   if (calcmode == "1")
@@ -75,11 +83,39 @@ int main() {
     cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << "\n";
   }
 
+  else if (calcmode == "7")
+   
+  {
+    double num3, num4;
+    cout << "Please enter R, A1, and N\n";
+    cin >> num1/*R*/ >> num2/*A1*/ >> num3/*N*/;
+    num4 = (1 - pow(num1, num3)) / (1 - num1); 
+    cout << "The answer is " << num4 * num2 << ".\n";
+  }
+
+  /*I added two more double floating point values to the code for now if the
+  user chooses this option because I could only get it down to that level,
+  hopefully I can in the future*/
+
+  else if (calcmode == "8")
+
+  {
+    double num3, num4;
+    cout << "Please enter R and An with its subscript sepreated from it\n";
+    cin >> num1/*R*/ >> num2/*A w/o the n*/ >> num3/*n*/;
+    cout << num2 << " = (A1) * " << num1 << "^" << num3 << " - 1\n";
+    num4 = num2/pow(num1, num3-1);
+    cout << "A1 = " << num4 << '\n';
+    cout << "An = " << num4 << " * " << num1 << "^n-1\n";    
+  }
+  
   else
 
   {
     cout << "Please enter a valid calculator action.\n";
-  } // puts out text telling them to enter a valid mode if they didn't type a
-    // valid number, not sure if this is a good way to do it.
+  }
+  
+  /*puts out text telling them to enter a valid mode if they didn't type a
+  valid number, not sure if this is a good way to do it. */
 
-  return 0;
+  return 0;}
