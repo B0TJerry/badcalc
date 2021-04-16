@@ -28,6 +28,8 @@ int main() {
     "---------------------------------------------------------------------\n"
     "|7.sUmoffinitegsrs|8.Geoseqrule|\n"
     "--------------------------------\n";
+  
+  /* I could definetly make this shorter */
 
   cin >> calcmode;
   while (calcmode == "0" || calcmode == "exit" || calcmode == "ex" ||
@@ -38,23 +40,38 @@ int main() {
          calcmode == "5" || calcmode == "squareoot" || calcmode == "sq" ||
          calcmode == "6" || calcmode == "exponent" || calcmode == "e" ||
          calcmode == "7" || calcmode == "sumoffinitegsrs" || calcmode == "u" ||
-         calcmode == "8" || calcmode == "geoseqrule" || calcmode == "g") {
+         calcmode == "8" || calcmode == "geoseqrule" || calcmode == "g"
+  )
+    
+    /*I REALLY hope this while statement doesn't start a slippery slope of
+      this calculator turing into a mess of spagetti code*/
+    
+    /*might as well be called the controls of this program. this while
+      statment although poorly made conviniently shows all the possible ways
+      you can type something to get the calculator to do something*/
+    
+  {
     
   if (calcmode == "0" || calcmode == "exit" || calcmode == "ex")
       
   {
+    
     cout << "---------\n"
          << "|Goodbye|\n"
          << "---------\n";
     break; 
+
   }
 
 
   else if (calcmode == "1" || calcmode == "multiply" || calcmode == "m")
+    
   /*not sure if I should keep this a string and find out how
-  to accept a number or the name of the mode, I might change this from time to time*/
+  to accept a number or the name of the mode, I might change this from time
+  to time*/
 
   {
+    
     cout << "---------------------------------------------------\n"
          << "|Please enter two numbers to multiply by together.|\n"
          << "---------------------------------------------------\n";
@@ -70,10 +87,12 @@ int main() {
   /*instead of using another floating point value and namin it ans I just
   took out the ans and just made it solve the problem in the answer
   statement*/
+  
   else if (calcmode == "2" || calcmode == "divide" || calcmode == "d" )
   
 
   {
+    
     cout << "-----------------------------------------------------\n"
          << "|Please enter two numbers to divide by eachother by.|\n"
          << "-----------------------------------------------------\n";
@@ -84,11 +103,13 @@ int main() {
          << "|What else would you like to do?|\n"
          << "---------------------------------\n";
     cin >> calcmode; 
+
   }
 
   else if (calcmode == "3" || calcmode == "add" || calcmode == "a")
 
   {
+    
     cout << "-----------------------------------------------\n"
          << "|Please enter two numbers to add to eachother.|\n"
          << "-----------------------------------------------\n";
@@ -104,6 +125,7 @@ int main() {
   else if (calcmode == "4" || calcmode == "subtract" || calcmode == "s")
 
   {
+    
     cout << "------------------------------------------------------\n"
          << "|Please enter two numbers to subtract from eachother.|\n"
          << "------------------------------------------------------\n";
@@ -114,11 +136,13 @@ int main() {
          << "|What else would you like to do?|\n"
          << "---------------------------------\n";
     cin >> calcmode;
+
   }
 
   else if (calcmode == "5" || calcmode == "squareoot" || calcmode == "sq")
 
   {
+    
     cout << "--------------------------------------------------"
          << "|Please enter a number to get the square root of.|\n"
          << "--------------------------------------------------";
@@ -128,11 +152,13 @@ int main() {
          << "|What else would you like to do?|\n"
          << "---------------------------------\n";
     cin >> calcmode;
+
   }
 
   else if (calcmode == "6" || calcmode == "exponent" || calcmode == "e")
 
   {
+    
     cout << "-------------------------------------------------\n"
          << "|Please enter the base First, then the exponent.|\n"
          << "-------------------------------------------------\n";
@@ -142,11 +168,13 @@ int main() {
          << "|What else would you like to do?|\n"
          << "---------------------------------\n";
     cin >> calcmode;
+
   }
 
   else if (calcmode == "7" || calcmode == "sumoffinitegsrs" || calcmode == "u")
    
   {
+    
     double num3, num4;
     cout << "---------------------------\n"
          << "|Please enter R, A1, and N|\n"
@@ -158,6 +186,7 @@ int main() {
          << "|What else would you like to do?|\n"
          << "---------------------------------\n";
     cin >> calcmode;
+
   }
 
   /*I added two more double floating point values to the code for now if the
@@ -167,6 +196,7 @@ int main() {
   else if (calcmode == "8" || calcmode == "geoseqrule" || calcmode == "g")
 
   {
+    
     double num3, num4;
     cout << "------------------------------------------------------------\n"
          << "|Please enter R and An with its subscript sepreated from it|\n"
@@ -180,6 +210,7 @@ int main() {
          << "|What else would you like to do?|\n"
          << "---------------------------------\n";
     cin >> calcmode;
+    
   }
   
   else
@@ -193,7 +224,9 @@ int main() {
          << "---------------------------------\n";
     cin >> calcmode;
   }
+  
   }
+  
     /*puts out text telling them to enter a valid mode if they didn't type a
     valid number, not sure if this is a good way to do it. */
 
