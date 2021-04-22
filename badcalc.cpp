@@ -357,13 +357,14 @@ int main() {
       }
       else if (calcmode == "10" || calcmode == "Probability" || calcmode == "p")
       {
+          while (1) {
           string calcmode2 = "0";
-          cout << "--------------------------------------------\n"
-               << "|0.Back|1.P(A|B)|2.p(aandB)|3.Placeholder|\n"
-               << "--------------------------------------------\n";
+          cout << "----------------------------\n"
+               << "|0.Back|1.P(A|B)|2.p(aandB)|\n"
+               << "----------------------------\n";
           cin >> calcmode2;
-      if (calcmode2 == "0" || calcmode == "back")
-      {
+          if (calcmode2 == "0" || calcmode == "back")
+          {
           cout <<
               "---------------------------------------------------------------------\n"
               "|0.EXit|1.Multiply|2.Divide|3.Add|4.Subtract|5.SQuareroot|6.Exponent|\n"
@@ -371,28 +372,29 @@ int main() {
               "|7.sUmoffinitegsrs|8.Geoseqrule|9.sumofInfgsrs|10.Probability|\n"
               "--------------------------------------------------------------\n";
           cin >> calcmode;
+          break;
       }
-      if (calcmode2 == "1" || calcmode2 == "p(a|b)" || calcmode2 == "p")
-      {
+          if (calcmode2 == "1" || calcmode2 == "p(a|b)" || calcmode2 == "p")
+          {
               cout << "----------------------------------------\n"
                    << "|Please enter P(AandB) followed by P(B)|\n"
                    << "----------------------------------------\n";
               cin >> num1 >> num2;
               while (1)
               {
-                   if (cin.good())
-                   {
-                       break;
-                   }
-                   else
-                   {
-                       cin.clear();
-                       cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                       cout << "-------------------------------\n"
-                            << "|Please enter an acutal number|\n"
-                            << "-------------------------------\n";
-                       cin >> num1 >> num2;
-                   }
+                  if (cin.good())
+                  {
+                      break;
+              }
+                  else
+                  {
+                      cin.clear();
+                      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                      cout << "-------------------------------\n"
+                           << "|Please enter an acutal number|\n"
+                           << "-------------------------------\n";
+                      cin >> num1 >> num2;
+                  }
               }
               cout << "P(A|B) = " << num1/num2 << '\n';
               cout << "---------------------------------\n"
@@ -407,21 +409,53 @@ int main() {
                        << "-----------------------------------------\n";
                   cin >> calcmode2;
               }
-      }
-      if (calcmode2 == "2" || calcmode2 == "p(aandb)" || calcmode2 == "b")
-      {
+          }
+          if (calcmode2 == "2" || calcmode2 == "p(aandb)" || calcmode2 == "b")
+          {
+              cout << "------------------------------------\n"
+                   << "|Please enter P(A) followed by P(B)|\n"
+                   << "------------------------------------\n";
+              cin >> num1 >> num2;
+              while (1)
+              {
+                  if (cin.good())
+                  {
+                      break;
+                  }
+                  else
+                  {
+                      cin.clear();
+                      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                      cout << "-------------------------------\n"
+                           << "|Please enter an acutal number|\n"
+                           << "-------------------------------\n";
+                      cin >> num1 >> num2;
+                  }
+              }
+              cout << "P(AandB) = " << num1*num2 << '\n';
 
-
-
+              cout << "---------------------------------\n"
+                   << "|What else would you like to do?|\n"
+                   << "---------------------------------\n";
+              cin >> calcmode2;
+              if (cin.fail())
+              {
+                  cin.clear();
+                  cout << "-----------------------------------------\n"
+                       << "|Please enter a valid calculator action.|\n"
+                       << "-----------------------------------------\n";
+                  cin >> calcmode2;
+              }
+          }
+          }
       }
-      else
-      {
-          cout << "-----------------------------------------\n"
-               << "|Please enter a valid calculator action.|\n"
-               << "-----------------------------------------\n";
-          cin >> calcmode;
+          else
+          {
+              cout << "-----------------------------------------\n"
+                   << "|Please enter a valid calculator action.|\n"
+                   << "-----------------------------------------\n";
+              cin >> calcmode;
+          }
       }
+      return 0;
   }
-  return 0;
-  }
-}
