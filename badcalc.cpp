@@ -10,11 +10,11 @@ int main() {
 | |_)  / /\  | | \ / /`   / /\  | |   / /`
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )"
        << '\n';
-  cout << "---------------------------------------------------------------------\n"
-          "|0.EXit|1.Multiply|2.Divide|3.Add|4.Subtract|5.SQuareroot|6.Exponent|\n"
-          "---------------------------------------------------------------------\n"
-          "|7.sUmoffinitegsrs|8.Geoseqrule|9.sumofInfgsrs|10.Probability|\n"
-          "--------------------------------------------------------------\n";
+  cout << "---------------------------------------------------------------------------\n"
+          "|0.EXit|1.meNu2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
+          "---------------------------------------------------------------------------\n"
+          "|8.sUmoffinitegsrs|9.Geoseqrule|10.sUmofinfgsrs|11.Probability|\n"
+          "---------------------------------------------------------------\n";
   cin >> calcmode;
 
   while (true)
@@ -26,7 +26,25 @@ int main() {
                << "----------\n";
           break;
       }
-      else if (calcmode == "1" || calcmode == "multiply" || calcmode == "m")
+      else if (calcmode == "1" || calcmode == "menu" || calcmode == "n")
+      {
+          cout <<
+              "---------------------------------------------------------------------------\n"
+              "|0.EXit|1.meNu2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
+              "---------------------------------------------------------------------------\n"
+              "|8.sUmoffinitegsrs|9.Geoseqrule|10.sUmofinfgsrs|11.Probability|\n"
+              "---------------------------------------------------------------\n";
+          cin >> calcmode;
+          while (cin.fail())
+          {
+              cin.clear();
+              cout << "-----------------------------------------\n"
+                   << "|Please enter a valid calculator action.|\n"
+                   << "-----------------------------------------\n";
+              cin >> calcmode;
+          }
+      }
+      else if (calcmode == "2" || calcmode == "multiply" || calcmode == "m")
       {
           cout << "---------------------------------------------------\n"
                << "|Please enter two numbers to multiply by together.|\n"
@@ -62,7 +80,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "2" || calcmode == "divide" || calcmode == "d")
+      else if (calcmode == "3" || calcmode == "divide" || calcmode == "d")
       {
           cout << "-----------------------------------------------------\n"
                << "|Please enter two numbers to divide by eachother by.|\n"
@@ -98,7 +116,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "3" || calcmode == "add" || calcmode == "a")
+      else if (calcmode == "4" || calcmode == "add" || calcmode == "a")
       {
           cout << "-----------------------------------------------\n"
                << "|Please enter two numbers to add to eachother.|\n"
@@ -133,7 +151,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "4" || calcmode == "subtract" || calcmode == "s")
+      else if (calcmode == "5" || calcmode == "subtract" || calcmode == "s")
       {
           cout << "------------------------------------------------------\n"
                << "|Please enter two numbers to subtract from eachother.|\n"
@@ -168,7 +186,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "5" || calcmode == "squareroot" || calcmode == "sq")
+      else if (calcmode == "6" || calcmode == "squareroot" || calcmode == "sq")
       {
           cout << "--------------------------------------------------\n"
                << "|Please enter a number to get the square root of.|\n"
@@ -204,7 +222,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "6" || calcmode == "exponent" || calcmode == "e")
+      else if (calcmode == "7" || calcmode == "exponent" || calcmode == "e")
       {
           cout << "-------------------------------------------------\n"
                << "|Please enter the base First, then the exponent.|\n"
@@ -241,7 +259,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "7" || calcmode == "sumoffinitegsrs" || calcmode == "u")
+      else if (calcmode == "8" || calcmode == "sumoffinitegsrs" || calcmode == "u")
       {
           double num3 = 0, num4 = 0;
           cout << "---------------------------\n"
@@ -279,7 +297,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "8" || calcmode == "geoseqrule" || calcmode == "g")
+      else if (calcmode == "9" || calcmode == "geoseqrule" || calcmode == "g")
       {
           double num3 = 0, num4 = 0;
           cout << "------------------------------------------------------------\n"
@@ -319,7 +337,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "9" || calcmode == "sumofinfgsrs" || calcmode == "i")
+      else if (calcmode == "10" || calcmode == "sumofinfgsrs" || calcmode == "i")
       {
           cout << "-----------------------\n"
                << "|please enter R and A1|\n"
@@ -355,7 +373,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "10" || calcmode == "Probability" || calcmode == "p")
+      else if (calcmode == "11" || calcmode == "Probability" || calcmode == "p")
       {
           while (1) {
           string calcmode2 = "0";
@@ -449,13 +467,13 @@ int main() {
           }
           }
       }
-          else
-          {
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
-              cin >> calcmode;
-          }
+      else
+      {
+          cout << "-----------------------------------------\n"
+               << "|Please enter a valid calculator action.|\n"
+               << "-----------------------------------------\n";
+          cin >> calcmode;
       }
-      return 0;
   }
+  return 0;
+}
