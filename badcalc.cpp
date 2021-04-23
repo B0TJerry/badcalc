@@ -10,13 +10,13 @@ int main() {
 | |_)  / /\  | | \ / /`   / /\  | |   / /`
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )"
        << '\n';
-  cout << "---------------------------------------------------------------------------\n"
-          "|0.EXit|1.meNu2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
-          "---------------------------------------------------------------------------\n"
-          "|8.sUmoffinitegsrs|9.Geoseqrule|10.sUmofinfgsrs|11.Probability|\n"
-          "---------------------------------------------------------------\n";
+  cout <<
+      "----------------------------------------------------------------------------\n"
+      "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
+      "----------------------------------------------------------------------------\n"
+      "|8.GEometricsrs+seq|9.Probability|\n"
+      "----------------------------------\n";
   cin >> calcmode;
-
   while (true)
   {
       if (calcmode == "0" || calcmode == "exit" || calcmode == "ex")
@@ -29,11 +29,11 @@ int main() {
       else if (calcmode == "1" || calcmode == "menu" || calcmode == "n")
       {
           cout <<
-              "---------------------------------------------------------------------------\n"
-              "|0.EXit|1.meNu2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
-              "---------------------------------------------------------------------------\n"
-              "|8.sUmoffinitegsrs|9.Geoseqrule|10.sUmofinfgsrs|11.Probability|\n"
-              "---------------------------------------------------------------\n";
+              "----------------------------------------------------------------------------\n"
+              "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
+              "----------------------------------------------------------------------------\n"
+              "|8.Probabiltiy|9.GEometricsrs+seq|\n"
+              "----------------------------------\n";
           cin >> calcmode;
           while (cin.fail())
           {
@@ -259,121 +259,7 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "8" || calcmode == "sumoffinitegsrs" || calcmode == "u")
-      {
-          double num3 = 0, num4 = 0;
-          cout << "---------------------------\n"
-               << "|Please enter R, A1, and N|\n"
-               << "---------------------------\n";
-          cin >> num1 /*R*/ >> num2 /*A1*/ >> num3 /*N*/;
-          while (1)
-          {
-              if (cin.good())
-              {
-                  break;
-              }
-              else
-              {
-                  cin.clear();
-                  cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
-                  cin >> num1 >> num2 >> num3;
-              }
-          }
-          num4 = (1 - pow(num1, num3)) / (1 - num1);
-          cout << "The answer is " << num4 * num2 << ".\n";
-          cout << "---------------------------------\n"
-           << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
-          cin >> calcmode;
-          if (cin.fail())
-          {
-              cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
-              cin >> calcmode;
-          }
-      }
-      else if (calcmode == "9" || calcmode == "geoseqrule" || calcmode == "g")
-      {
-          double num3 = 0, num4 = 0;
-          cout << "------------------------------------------------------------\n"
-               << "|Please enter R and An with its subscript sepreated from it|\n"
-               << "------------------------------------------------------------\n";
-          cin >> num1 /*R*/ >> num2 /*A w/o the n*/ >> num3 /*n*/;
-          while (1)
-          {
-              if (cin.good())
-              {
-                  break;
-              }
-              else
-              {
-          cin.clear();
-          cin.ignore(numeric_limits<streamsize>::max(), '\n');
-          cout << "-------------------------------\n"
-               << "|Please enter an acutal number|\n"
-               << "-------------------------------\n";
-          cin >> num1 >> num2 >> num3;
-        }
-      }
-          cout << num2 << " = (A1) * " << num1 << "^" << num3 << " - 1\n";
-          num4 = num2 / pow(num1, num3 - 1);
-          cout << "A1 = " << num4 << '\n';
-          cout << "An = " << num4 << " * " << num1 << "^n-1\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
-          cin >> calcmode;
-          if (cin.fail())
-          {
-              cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
-              cin >> calcmode;
-          }
-      }
-      else if (calcmode == "10" || calcmode == "sumofinfgsrs" || calcmode == "i")
-      {
-          cout << "-----------------------\n"
-               << "|please enter R and A1|\n"
-               << "-----------------------\n";
-          cin >> num1 >> num2;
-          while (1)
-          {
-              if (cin.good())
-              {
-                  break;
-              }
-              else
-              {
-                  cin.clear();
-                  cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
-                  cin >> num1 >> num2;
-              }
-          }
-          cout << "S = " << num2 / (1 - num1) << '\n';
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
-          cin >> calcmode;
-          if (cin.fail())
-          {
-              cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
-              cin >> calcmode;
-          }
-      }
-      else if (calcmode == "11" || calcmode == "Probability" || calcmode == "p")
+      else if (calcmode == "9" || calcmode == "Probability" || calcmode == "p")
       {
           while (1) {
           string calcmode2 = "0";
@@ -384,11 +270,11 @@ int main() {
           if (calcmode2 == "0" || calcmode == "back")
           {
           cout <<
-              "---------------------------------------------------------------------\n"
-              "|0.EXit|1.Multiply|2.Divide|3.Add|4.Subtract|5.SQuareroot|6.Exponent|\n"
-              "---------------------------------------------------------------------\n"
-              "|7.sUmoffinitegsrs|8.Geoseqrule|9.sumofInfgsrs|10.Probability|\n"
-              "--------------------------------------------------------------\n";
+              "----------------------------------------------------------------------------\n"
+              "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
+              "----------------------------------------------------------------------------\n"
+              "|8.GEometricsrs+seq|9.Probability|\n"
+              "----------------------------------\n";
           cin >> calcmode;
           break;
       }
@@ -465,6 +351,150 @@ int main() {
                   cin >> calcmode2;
               }
           }
+          }
+      }
+      else if (calcmode == "8" || calcmode == "geometricsrs+seq" || calcmode == "ge")
+      {
+          while (1)
+          {
+              string calcmode2 = "0";
+              cout << "------------------------------------------------------\n"
+                   << "|0.Back|1.sUmoffinitegsrs|2.Geoseqrule|3.sumofInfgsrs|\n"
+                   << "------------------------------------------------------\n";
+              cin >> calcmode2;
+              if (calcmode2 == "0" || calcmode == "back")
+              {
+                  cout <<
+                      "---------------------------------------------------------------------\n"
+                      "|0.EXit|1.Multiply|2.Divide|3.Add|4.Subtract|5.SQuareroot|6.Exponent|\n"
+                      "---------------------------------------------------------------------\n"
+                      "|7.GEometricsrs+seq|8.Probability|\n"
+                      "----------------------------------\n";
+                  cin >> calcmode;
+                  break;
+              }
+              else if (calcmode2 == "1" || calcmode2 == "sumoffinitegsrs" || calcmode2 == "u")
+              {
+          double num3 = 0, num4 = 0;
+          cout << "---------------------------\n"
+               << "|Please enter R, A1, and N|\n"
+               << "---------------------------\n";
+          cin >> num1 /*R*/ >> num2 /*A1*/ >> num3 /*N*/;
+          while (1)
+          {
+              if (cin.good())
+              {
+                  break;
+              }
+              else
+              {
+                  cin.clear();
+                  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                  cout << "-------------------------------\n"
+                       << "|Please enter an acutal number|\n"
+                       << "-------------------------------\n";
+                  cin >> num1 >> num2 >> num3;
+              }
+          }
+          num4 = (1 - pow(num1, num3)) / (1 - num1);
+          cout << "The answer is " << num4 * num2 << ".\n";
+          cout << "---------------------------------\n"
+           << "|What else would you like to do?|\n"
+               << "---------------------------------\n";
+          cin >> calcmode;
+          if (cin.fail())
+          {
+              cin.clear();
+              cout << "-----------------------------------------\n"
+                   << "|Please enter a valid calculator action.|\n"
+                   << "-----------------------------------------\n";
+              cin >> calcmode;
+          }
+}
+              else if (calcmode2 == "2" || calcmode2 == "geoseqrule" || calcmode2 == "g")
+              {
+                  double num3 = 0, num4 = 0;
+                  cout << "------------------------------------------------------------\n"
+                       << "|Please enter R and An with its subscript sepreated from it|\n"
+                       << "------------------------------------------------------------\n";
+                  cin >> num1 /*R*/ >> num2 /*A w/o the n*/ >> num3 /*n*/;
+                  while (1)
+                  {
+                      if (cin.good())
+                      {
+                          break;
+                      }
+                      else
+                      {
+                          cin.clear();
+                          cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                          cout << "-------------------------------\n"
+                               << "|Please enter an acutal number|\n"
+                               << "-------------------------------\n";
+                          cin >> num1 >> num2 >> num3;
+                      }
+                  }
+                  cout << num2 << " = (A1) * " << num1 << "^" << num3 << " - 1\n";
+                  num4 = num2 / pow(num1, num3 - 1);
+                  cout << "A1 = " << num4 << '\n';
+                  cout << "An = " << num4 << " * " << num1 << "^n-1\n";
+                  cout << "---------------------------------\n"
+                       << "|What else would you like to do?|\n"
+                       << "---------------------------------\n";
+                  cin >> calcmode;
+                  if (cin.fail())
+                  {
+                      cin.clear();
+                      cout << "-----------------------------------------\n"
+                           << "|Please enter a valid calculator action.|\n"
+                           << "-----------------------------------------\n";
+                      cin >> calcmode;
+                  }
+              }
+              else if (calcmode2 == "3" || calcmode2 == "sumofinfgsrs" || calcmode2 == "i")
+              {
+                  cout << "-----------------------\n"
+                       << "|please enter R and A1|\n"
+                       << "-----------------------\n";
+                  cin >> num1 >> num2;
+                  while (1)
+                  {
+                      if (cin.good())
+                      {
+                          break;
+                      }
+                      else
+              {
+                  cin.clear();
+                  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                  cout << "-------------------------------\n"
+                       << "|Please enter an acutal number|\n"
+                       << "-------------------------------\n";
+                  cin >> num1 >> num2;
+              }
+          }
+          cout << "S = " << num2 / (1 - num1) << '\n';
+          cout << "---------------------------------\n"
+               << "|What else would you like to do?|\n"
+               << "---------------------------------\n";
+          cin >> calcmode;
+          if (cin.fail())
+          {
+              cin.clear();
+              cout << "-----------------------------------------\n"
+                   << "|Please enter a valid calculator action.|\n"
+                   << "-----------------------------------------\n";
+              cin >> calcmode;
+          }
+              }
+              else
+              {
+                  cout << "-----------------------------------------\n"
+                       << "|Please enter a valid calculator action.|\n"
+                       << "-----------------------------------------\n";
+                  cin >> calcmode2;
+              }
+
           }
       }
       else
