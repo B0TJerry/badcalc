@@ -2,7 +2,7 @@
 # Badcalc
 This is a horrible little calculator that I am making in C++ with my questionable coding skills, all while teaching myself C++ at the same time. The goal of this project is not for the code to be well written or look nice, but a personal challenge to make a calculator from scratch while being new to programming and C++. Over time this calculator will likely get more and more functions added to it and hopefully I can eventually make this a well rounded calculator program.
 ## installation
-This calculator is mostly meant to be used in a linux terminal, I just compile in using g++ while naming it badcalc like this -> g++ badcalc.cpp -o badcalc, lastly you should use the dot slash command and then the name like this -> ./badcalc and it works.
+This calculator is mostly meant to be used in a linux terminal, I just compile in using g++ while naming it badcalc useing the command: g++ badcalc.cpp -o badcalc. lastly you should use the dot slash command and then the name like this -> ./badcalc, and it works.
 you should be able to compile it on windows or MacOS as well but I dont use either of those Operating systems so I an not quite sure how and I don't intend on learning how to so if you would like to use this calculator on any other Os as a novelty, your on your own here.
 ### to do
 * eventually make a working gui
