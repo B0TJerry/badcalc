@@ -31,7 +31,6 @@ int main() {
               cin >> calcmode;
           }
       }
-
       else if (calcmode == "2" || calcmode == "multiply" || calcmode == "m")
       {
           cout << multiply;
@@ -200,78 +199,150 @@ int main() {
               cin >> calcmode;
           }
       }
-      else if (calcmode == "9" || calcmode == "Probability" || calcmode == "p")
+      else if (calcmode == "8" || calcmode == "trigfunctions" || calcmode == "t")
       {
-          while (1) {
-          string calcmode2 = "0";
-          cout << probmenu;
-          cin >> calcmode2;
-          if (calcmode2 == "0" || calcmode == "back")
+        double part1 = 0;
+        double part2 = 0;
+        string type = "degrees";
+        string calcmode2 = "0";
+        string calcmode3 = "deg";
+        string message = degmes;
+        cout << trigmenu;
+        cin >> calcmode2;
+        cout << radordeg;
+        cin >> calcmode3;
+        while (1)
+        {
+          if (cin.good())
           {
-          cout << menu;
-          cin >> calcmode;
-          break;
-      }
-          if (calcmode2 == "1" || calcmode2 == "p(a|b)" || calcmode2 == "p")
-          {
-              cout << pab;
-              cin >> num1 >> num2;
-              while (1)
-              {
-                  if (cin.good())
-                  {
-                      break;
-              }
-                  else
-                  {
-                      cin.clear();
-                      cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                      cout << actualnum;
-                      cin >> num1 >> num2;
-                  }
-              }
-              cout << "P(A|B) = " << num1/num2 << '\n';
-              cout << whatelse;
-              cin >> calcmode2;
-              if (cin.fail())
-              {
-                  cin.clear();
-                  cout << valcalc;
-                  cin >> calcmode2;
-              }
+            break;
           }
-          if (calcmode2 == "2" || calcmode2 == "p(aandb)" || calcmode2 == "b")
+          else
           {
-              cout << paandb;
-              cin >> num1 >> num2;
-              while (1)
-              {
-                  if (cin.good())
-                  {
-                      break;
-                  }
-                  else
-                  {
-                      cin.clear();
-                      cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                      cout << actualnum;
-                      cin >> num1 >> num2;
-                  }
-              }
-              cout << "P(AandB) = " << num1*num2 << '\n';
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << actualnum;
+            cin >> calcmode;
+          }
+        }
+        if (calcmode3 == "deg" || calcmode3 == "degree")
+        {
+          part1 = 3.14159265;
+          part2 = 180;
+          type = " radians";
+          message = degmes;
+        }
+        if (calcmode3 == "rad" || calcmode == "radian")
+        {
+          part1 = 180;
+          part2 = 3.14159265;
+          type = " degrees";
+          message = radmes;
+        }
+        while (1)
+        {
+          if (calcmode2 == "0" || calcmode2 == "back" || calcmode2 == "b")
+          {
+            cout << menu;
+            cin >> calcmode;
+            break;
+          }
+          else if (calcmode2 == "1" || calcmode2 == "sin" || calcmode2 == "s")
+          {
 
-              cout << whatelse;
-              cin >> calcmode2;
-              if (cin.fail())
+            cout << message;
+            cin >> num1;
+            while (1)
+            {
+              if (cin.good())
               {
-                  cin.clear();
+                break;
+              }
+              else
+              {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << actualnum;
+                cin >> num1;
+              }
+            }
+
+            cout << "The sine of " << num1 << " is " << sin(num1 * part1 / part2) << type << ".\n";
+            cout << whatelse;
+            cin >> calcmode2;
+            if (cin.fail())
+            {
+              cin.clear();
+              cout << valcalc;
+              cin >> calcmode2;
+            }
+          }
+          else if (calcmode2 == "2" || calcmode2 == "cos" || calcmode2 == "c")
+          {
+            cout << trigmes;
+            cin >> num1;
+            while (1)
+            {
+              if (cin.good())
+              {
+                break;
+              }
+              else
+              {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << actualnum;
+                cin >> num1;
+              }
+            }
+            cout << "the cosine of " << num1 << " is " << cos(num1 * part1 / part2) << type << ".\n";
+                  cout << whatelse;
+                  cin >> calcmode2;
+                  //TODO change statements below to be similar to the while statements above in similar places
+                  if (cin.fail())
+                  {
+                      cin.clear();
+                      cout << valcalc;
+                      cin >> calcmode2;
+                  }
+              }
+              else if (calcmode2 == "3" || calcmode2 == "tan" || calcmode2 == "t")
+              {
+                  cout << trigmes;
+                  cin >> num1;
+                  while (1)
+                  {
+                      if (cin.good())
+                      {
+                          break;
+                      }
+                      else
+                      {
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cout << actualnum;
+                        cin >> num1;
+                      }
+                  }
+                  cout << "the tangent of " << num1 << " is " << tan(num1 * part1/part2)<< '\n';
+                  cout << whatelse;
+                  cin >> calcmode2;
+                  if (cin.fail())
+                  {
+                    cin.clear();
+                    cout << valcalc;
+                    cin >> calcmode2;
+                  }
+              }
+              else
+              {
                   cout << valcalc;
                   cin >> calcmode2;
               }
-          }
+
           }
       }
-      else if (calcmode == "8" || calcmode == "geometricsrs+seq" || calcmode == "ge")
+      else if (calcmode == "9" || calcmode == "geometricsrs+seq" || calcmode == "ge")
       {
           string calcmode2 = "0";
           cout << geomenu;
@@ -380,6 +451,77 @@ int main() {
                   cin >> calcmode2;
               }
 
+          }
+      }
+      else if (calcmode == "10" || calcmode == "Probability" || calcmode == "p")
+      {
+          while (1) {
+          string calcmode2 = "0";
+          cout << probmenu;
+          cin >> calcmode2;
+          if (calcmode2 == "0" || calcmode == "back")
+          {
+          cout << menu;
+          cin >> calcmode;
+          break;
+      }
+          if (calcmode2 == "1" || calcmode2 == "p(a|b)" || calcmode2 == "p")
+          {
+              cout << pab;
+              cin >> num1 >> num2;
+              while (1)
+              {
+                  if (cin.good())
+                  {
+                      break;
+              }
+                  else
+                  {
+                      cin.clear();
+                      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                      cout << actualnum;
+                      cin >> num1 >> num2;
+                  }
+              }
+              cout << "P(A|B) = " << num1/num2 << '\n';
+              cout << whatelse;
+              cin >> calcmode2;
+              if (cin.fail())
+              {
+                  cin.clear();
+                  cout << valcalc;
+                  cin >> calcmode2;
+              }
+          }
+          if (calcmode2 == "2" || calcmode2 == "p(aandb)" || calcmode2 == "b")
+          {
+              cout << paandb;
+              cin >> num1 >> num2;
+              while (1)
+              {
+                  if (cin.good())
+                  {
+                      break;
+                  }
+                  else
+                  {
+                      cin.clear();
+                      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                      cout << actualnum;
+                      cin >> num1 >> num2;
+                  }
+              }
+              cout << "P(AandB) = " << num1*num2 << '\n';
+
+              cout << whatelse;
+              cin >> calcmode2;
+              if (cin.fail())
+              {
+                  cin.clear();
+                  cout << valcalc;
+                  cin >> calcmode2;
+              }
+          }
           }
       }
       else
