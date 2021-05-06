@@ -12,14 +12,12 @@ int main() {
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )"
        << '\n';
   cout << menu;
-        cin >> calcmode;
+  cin >> calcmode;
   while (true)
   {
       if (calcmode == "0" || calcmode == "exit" || calcmode == "ex")
       {
-          cout << "----------\n"
-               << "|Goodbye!|\n"
-               << "----------\n";
+          cout << bye;
           break;
       }
       else if (calcmode == "1" || calcmode == "menu" || calcmode == "n")
@@ -33,11 +31,10 @@ int main() {
               cin >> calcmode;
           }
       }
+
       else if (calcmode == "2" || calcmode == "multiply" || calcmode == "m")
       {
-          cout << "---------------------------------------------------\n"
-               << "|Please enter two numbers to multiply by together.|\n"
-               << "---------------------------------------------------\n";
+          cout << multiply;
           cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
           while (1)
           {
@@ -65,9 +62,7 @@ int main() {
       }
       else if (calcmode == "3" || calcmode == "divide" || calcmode == "d")
       {
-          cout << "-----------------------------------------------------\n"
-               << "|Please enter two numbers to divide by eachother by.|\n"
-               << "-----------------------------------------------------\n";
+          cout << divide;
           cin >> num1 >> num2; // reads 1 floating point values into num1 and num2 each
           while (1)
           {
@@ -95,11 +90,8 @@ int main() {
       }
       else if (calcmode == "4" || calcmode == "add" || calcmode == "a")
       {
-          cout << "-----------------------------------------------\n"
-               << "|Please enter two numbers to add to eachother.|\n"
-               << "-----------------------------------------------\n";
-          cin >> num1 >>
-              num2; // reads 1 floating point value into num1 and num2 each
+          cout << add;
+          cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
           while (1)
           {
               if (cin.good())
@@ -125,9 +117,7 @@ int main() {
       }
       else if (calcmode == "5" || calcmode == "subtract" || calcmode == "s")
       {
-          cout << "------------------------------------------------------\n"
-               << "|Please enter two numbers to subtract from eachother.|\n"
-               << "------------------------------------------------------\n";
+          cout << subtract;
           cin >> num1 >> num2;
           while (1)
           {
@@ -154,9 +144,7 @@ int main() {
       }
       else if (calcmode == "6" || calcmode == "squareroot" || calcmode == "sq")
       {
-          cout << "--------------------------------------------------\n"
-               << "|Please enter a number to get the square root of.|\n"
-               << "--------------------------------------------------\n";
+          cout << squareroot;
           cin >> num1; // reads 1 floating point value into num1
           while (1)
           {
@@ -185,10 +173,8 @@ int main() {
       }
       else if (calcmode == "7" || calcmode == "exponent" || calcmode == "e")
       {
-          cout << "-------------------------------------------------\n"
-               << "|Please enter the base First, then the exponent.|\n"
-               << "-------------------------------------------------\n";
-          cin >> num1 >>
+          cout << exponent;
+              cin >> num1 >>
               num2; // reads 1 floating point value into num1 and num2 each
           while (1)
           {
@@ -218,9 +204,7 @@ int main() {
       {
           while (1) {
           string calcmode2 = "0";
-          cout << "----------------------------\n"
-               << "|0.Back|1.P(A|B)|2.p(aandB)|\n"
-               << "----------------------------\n";
+          cout << probmenu;
           cin >> calcmode2;
           if (calcmode2 == "0" || calcmode == "back")
           {
@@ -230,9 +214,7 @@ int main() {
       }
           if (calcmode2 == "1" || calcmode2 == "p(a|b)" || calcmode2 == "p")
           {
-              cout << "----------------------------------------\n"
-                   << "|Please enter P(AandB) followed by P(B)|\n"
-                   << "----------------------------------------\n";
+              cout << pab;
               cin >> num1 >> num2;
               while (1)
               {
@@ -260,9 +242,7 @@ int main() {
           }
           if (calcmode2 == "2" || calcmode2 == "p(aandb)" || calcmode2 == "b")
           {
-              cout << "------------------------------------\n"
-                   << "|Please enter P(A) followed by P(B)|\n"
-                   << "------------------------------------\n";
+              cout << paandb;
               cin >> num1 >> num2;
               while (1)
               {
@@ -294,9 +274,7 @@ int main() {
       else if (calcmode == "8" || calcmode == "geometricsrs+seq" || calcmode == "ge")
       {
           string calcmode2 = "0";
-          cout << "------------------------------------------------------\n"
-               << "|0.Back|1.sUmoffinitegsrs|2.Geoseqrule|3.sumofInfgsrs|\n"
-               << "------------------------------------------------------\n";
+          cout << geomenu;
           cin >> calcmode2;
           while (1)
           {
@@ -309,9 +287,7 @@ int main() {
               else if (calcmode2 == "1" || calcmode2 == "sumoffinitegsrs" || calcmode2 == "u")
               {
                   double num3 = 0, num4 = 0;
-                  cout << "---------------------------\n"
-                       << "|Please enter R, A1, and N|\n"
-                       << "---------------------------\n";
+                  cout << sumoffinite;
                   cin >> num1 /*R*/ >> num2 /*A1*/ >> num3 /*N*/;
                   while (1)
                   {
@@ -341,9 +317,7 @@ int main() {
               else if (calcmode2 == "2" || calcmode2 == "geoseqrule" || calcmode2 == "g")
               {
                   double num3 = 0, num4 = 0;
-                  cout << "------------------------------------------------------------\n"
-                       << "|Please enter R and An with its subscript sepreated from it|\n"
-                       << "------------------------------------------------------------\n";
+                  cout << geoseqrule;
                   cin >> num1 /*R*/ >> num2 /*A w/o the n*/ >> num3 /*n*/;
                   while (1)
                   {
@@ -374,9 +348,7 @@ int main() {
               }
               else if (calcmode2 == "3" || calcmode2 == "sumofinfgsrs" || calcmode2 == "i")
               {
-                  cout << "-----------------------\n"
-                       << "|please enter R and A1|\n"
-                       << "-----------------------\n";
+                  cout << sumofinf;
                   cin >> num1 >> num2;
                   while (1)
                   {
