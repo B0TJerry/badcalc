@@ -1,6 +1,7 @@
 #include <cmath> //includes the cmath library so I can easily do exponents and square roots
 #include <iostream>
 #include <limits>
+#include "text.cpp"
 using namespace std;
 int main() {
   string calcmode = "0";
@@ -10,13 +11,8 @@ int main() {
 | |_)  / /\  | | \ / /`   / /\  | |   / /`
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )"
        << '\n';
-  cout <<
-      "----------------------------------------------------------------------------\n"
-      "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
-      "----------------------------------------------------------------------------\n"
-      "|8.GEometricsrs+seq|9.Probability|\n"
-      "----------------------------------\n";
-  cin >> calcmode;
+  cout << menu;
+        cin >> calcmode;
   while (true)
   {
       if (calcmode == "0" || calcmode == "exit" || calcmode == "ex")
@@ -28,19 +24,12 @@ int main() {
       }
       else if (calcmode == "1" || calcmode == "menu" || calcmode == "n")
       {
-          cout <<
-              "----------------------------------------------------------------------------\n"
-              "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
-              "----------------------------------------------------------------------------\n"
-              "|8.Probabiltiy|9.GEometricsrs+seq|\n"
-              "----------------------------------\n";
+          cout << menu;
           cin >> calcmode;
           while (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -60,23 +49,17 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1 >> num2;
               }
       }
           cout << num1 << " * " << num2 << " = " << num1 * num2 << "\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+          cout << whatelse;
           cin >> calcmode;
           while (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -96,23 +79,17 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1 >> num2;
               }
           }
           cout << num1 << " / " << num2 << " = " << num1 / num2 << "\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+          cout << whatelse;
           cin >> calcmode;
           if (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -132,22 +109,17 @@ int main() {
               else {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1 >> num2;
               }
           }
           cout << num1 << " + " << num2 << " = " << num1 + num2 << "\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+          cout << whatelse;
           cin >> calcmode;
+
           if (cin.fail()) {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -166,23 +138,17 @@ int main() {
               else {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1 >> num2;
               }
           }
           cout << num1 << " - " << num2 << " = " << num1 - num2 << "\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+          cout << whatelse;
           cin >> calcmode;
           if (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -202,23 +168,18 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1;
               }
           }
           cout << "The Square Root of " << num1 << " is " << sqrt(num1) << ".\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+
+          cout << whatelse;
           cin >> calcmode;
           if (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -239,23 +200,17 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1 >> num2;
               }
           }
           cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << "\n";
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+          cout << whatelse;
           cin >> calcmode;
           if (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode;
           }
       }
@@ -269,12 +224,7 @@ int main() {
           cin >> calcmode2;
           if (calcmode2 == "0" || calcmode == "back")
           {
-          cout <<
-              "----------------------------------------------------------------------------\n"
-              "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
-              "----------------------------------------------------------------------------\n"
-              "|8.GEometricsrs+seq|9.Probability|\n"
-              "----------------------------------\n";
+          cout << menu;
           cin >> calcmode;
           break;
       }
@@ -294,23 +244,17 @@ int main() {
                   {
                       cin.clear();
                       cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                      cout << "-------------------------------\n"
-                           << "|Please enter an acutal number|\n"
-                           << "-------------------------------\n";
+                      cout << actualnum;
                       cin >> num1 >> num2;
                   }
               }
               cout << "P(A|B) = " << num1/num2 << '\n';
-              cout << "---------------------------------\n"
-                   << "|What else would you like to do?|\n"
-                   << "---------------------------------\n";
+              cout << whatelse;
               cin >> calcmode2;
               if (cin.fail())
               {
                   cin.clear();
-                  cout << "-----------------------------------------\n"
-                       << "|Please enter a valid calculator action.|\n"
-                       << "-----------------------------------------\n";
+                  cout << valcalc;
                   cin >> calcmode2;
               }
           }
@@ -330,24 +274,18 @@ int main() {
                   {
                       cin.clear();
                       cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                      cout << "-------------------------------\n"
-                           << "|Please enter an acutal number|\n"
-                           << "-------------------------------\n";
+                      cout << actualnum;
                       cin >> num1 >> num2;
                   }
               }
               cout << "P(AandB) = " << num1*num2 << '\n';
 
-              cout << "---------------------------------\n"
-                   << "|What else would you like to do?|\n"
-                   << "---------------------------------\n";
+              cout << whatelse;
               cin >> calcmode2;
               if (cin.fail())
               {
                   cin.clear();
-                  cout << "-----------------------------------------\n"
-                       << "|Please enter a valid calculator action.|\n"
-                       << "-----------------------------------------\n";
+                  cout << valcalc;
                   cin >> calcmode2;
               }
           }
@@ -364,12 +302,7 @@ int main() {
           {
               if (calcmode2 == "0" || calcmode2 == "back" || calcmode2 == "b")
               {
-                  cout <<
-                      "----------------------------------------------------------------------------\n"
-                      "|0.EXit|1.meNu|2.Multiply|3.Divide|4.Add|5.Subtract|6.SQuareroot|7.Exponent|\n"
-                      "----------------------------------------------------------------------------\n"
-                      "|8.GEometricsrs+seq|9.Probability|\n"
-                      "----------------------------------\n";
+                  cout << menu;
                   cin >> calcmode;
                   break;
               }
@@ -390,24 +323,18 @@ int main() {
                       {
                           cin.clear();
                           cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                          cout << "-------------------------------\n"
-                               << "|Please enter an acutal number|\n"
-                               << "-------------------------------\n";
+                          cout << actualnum;
                           cin >> num1 >> num2 >> num3;
                       }
                   }
                   num4 = (1 - pow(num1, num3)) / (1 - num1);
                   cout << "The answer is " << num4 * num2 << ".\n";
-                  cout << "---------------------------------\n"
-                       << "|What else would you like to do?|\n"
-                       << "---------------------------------\n";
+                  cout << whatelse;
                   cin >> calcmode2;
                   if (cin.fail())
                   {
                       cin.clear();
-                      cout << "-----------------------------------------\n"
-                           << "|Please enter a valid calculator action.|\n"
-                           << "-----------------------------------------\n";
+                      cout << valcalc;
                       cin >> calcmode2;
                   }
               }
@@ -428,9 +355,7 @@ int main() {
                       {
                           cin.clear();
                           cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                          cout << "-------------------------------\n"
-                               << "|Please enter an acutal number|\n"
-                               << "-------------------------------\n";
+                          cout << actualnum;
                           cin >> num1 >> num2 >> num3;
                       }
                   }
@@ -438,16 +363,12 @@ int main() {
                   num4 = num2 / pow(num1, num3 - 1);
                   cout << "A1 = " << num4 << '\n';
                   cout << "An = " << num4 << " * " << num1 << "^n-1\n";
-                  cout << "---------------------------------\n"
-                       << "|What else would you like to do?|\n"
-                       << "---------------------------------\n";
+                  cout << whatelse;
                   cin >> calcmode2;
                   if (cin.fail())
                   {
                       cin.clear();
-                      cout << "-----------------------------------------\n"
-                           << "|Please enter a valid calculator action.|\n"
-                           << "-----------------------------------------\n";
+                      cout << valcalc;
                       cin >> calcmode2;
                   }
               }
@@ -467,31 +388,23 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << "-------------------------------\n"
-                       << "|Please enter an acutal number|\n"
-                       << "-------------------------------\n";
+                  cout << actualnum;
                   cin >> num1 >> num2;
               }
           }
           cout << "S = " << num2 / (1 - num1) << '\n';
-          cout << "---------------------------------\n"
-               << "|What else would you like to do?|\n"
-               << "---------------------------------\n";
+          cout << whatelse;
           cin >> calcmode2;
           if (cin.fail())
           {
               cin.clear();
-              cout << "-----------------------------------------\n"
-                   << "|Please enter a valid calculator action.|\n"
-                   << "-----------------------------------------\n";
+              cout << valcalc;
               cin >> calcmode2;
           }
               }
               else
               {
-                  cout << "-----------------------------------------\n"
-                       << "|Please enter a valid calculator action.|\n"
-                       << "-----------------------------------------\n";
+                  cout << valcalc;
                   cin >> calcmode2;
               }
 
@@ -499,9 +412,7 @@ int main() {
       }
       else
       {
-          cout << "-----------------------------------------\n"
-               << "|Please enter a valid calculator action.|\n"
-               << "-----------------------------------------\n";
+          cout << valcalc;
           cin >> calcmode;
       }
   }
