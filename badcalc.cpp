@@ -1,9 +1,12 @@
 #include <cmath> //includes the cmath library so I can easily do exponents and square roots
 #include <iostream>
 #include <limits>
+#include <fstream>
 #include "text.cpp"
 using namespace std;
 int main() {
+  fstream history;
+  history.open("history.txt", ios::app);
   string calcmode = "0";
   double num1 = 0, num2 = 0;
   cout << R"(
@@ -11,30 +14,31 @@ int main() {
 | |_)  / /\  | | \ / /`   / /\  | |   / /`
 |_|_) /_/--\ |_|_/ \_\_, /_/--\ |_|__ \_\_, )"
        << '\n';
-  cout << MENU;
-  cin >> calcmode;
+  history << "__________________________________________________________\n\n";
+  cout << MENU && history << MENU;
+  cin >> calcmode && history << calcmode << '\n';
   while (true)
   {
       if (calcmode == "0" || calcmode == "exit" || calcmode == "ex")
       {
-          cout << BYE;
+        cout << BYE && history << BYE;
           break;
       }
       else if (calcmode == "1" || calcmode == "menu" || calcmode == "n")
       {
-          cout << MENU;
-          cin >> calcmode;
+        cout << MENU && history << MENU;
+        cin >> calcmode && history << calcmode << '\n';
           while (cin.fail())
           {
               cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+              cout << VALCALC && history << VALCALC;
+              cin >> calcmode && history >> calcmode;
           }
       }
       else if (calcmode == "2" || calcmode == "multiply" || calcmode == "m")
       {
-          cout << MULTIPLY;
-          cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
+        cout << MULTIPLY && history << MULTIPLY;
+          cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
           while (1)
           {
               if (cin.good())
@@ -45,24 +49,25 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << ACTUALNUM;
-                  cin >> num1 >> num2;
+                  cout << ACTUALNUM && history << ACTUALNUM;
+                  cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
               }
       }
-          cout << num1 << " * " << num2 << " = " << num1 * num2 << "\n";
-          cout << WHATELSE;
-          cin >> calcmode;
+          cout << num1 << " * " << num2 << " = " << num1 * num2 << "\n" && history << num1 << " * " << num2 << " = " << num1 * num2 << '\n';
+          cout << WHATELSE && history << WHATELSE;
+          cin >> calcmode && history << calcmode << '\n';
           while (cin.fail())
           {
-              cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+            cin.clear();
+            cout << VALCALC && history << VALCALC;
+            //history << VALCALC;
+            cin >> calcmode && history << calcmode << '\n';
           }
       }
       else if (calcmode == "3" || calcmode == "divide" || calcmode == "d")
       {
-          cout << DIVIDE;
-          cin >> num1 >> num2; // reads 1 floating point values into num1 and num2 each
+          cout << DIVIDE && history << DIVIDE;
+          cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
           while (1)
           {
               if (cin.good())
@@ -73,24 +78,24 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << ACTUALNUM;
-                  cin >> num1 >> num2;
+                  cout << ACTUALNUM && history << ACTUALNUM;
+                  cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
               }
           }
-          cout << num1 << " / " << num2 << " = " << num1 / num2 << "\n";
-          cout << WHATELSE;
-          cin >> calcmode;
+          cout << num1 << " / " << num2 << " = " << num1 / num2 << "\n" && history << num1 << " / " << num2 << " = " << num1 / num2 << '\n' ;
+          cout << WHATELSE && history << WHATELSE;
+          cin >> calcmode && history << calcmode << '\n';
           if (cin.fail())
           {
               cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+              cout << VALCALC && history << VALCALC;
+              cin >> calcmode && history << calcmode << '\n';
           }
       }
       else if (calcmode == "4" || calcmode == "add" || calcmode == "a")
       {
-          cout << ADD;
-          cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
+          cout << ADD && history << ADD;
+          cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
           while (1)
           {
               if (cin.good())
@@ -100,24 +105,24 @@ int main() {
               else {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << ACTUALNUM;
-                  cin >> num1 >> num2;
+                  cout << ACTUALNUM && history << ACTUALNUM;
+                  cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
               }
           }
-          cout << num1 << " + " << num2 << " = " << num1 + num2 << "\n";
-          cout << WHATELSE;
-          cin >> calcmode;
+          cout << num1 << " + " << num2 << " = " << num1 + num2 << "\n" && history << num1 << " + " << num2 << " = " << num1 + num2 << '\n';
+          cout << WHATELSE && history << WHATELSE;
+          cin >> calcmode && history << calcmode << '\n';
 
           if (cin.fail()) {
               cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+              cout << VALCALC && history << VALCALC;
+              cin >> calcmode && history << calcmode << '\n';
           }
       }
       else if (calcmode == "5" || calcmode == "subtract" || calcmode == "s")
       {
-          cout << SUBTRACT;
-          cin >> num1 >> num2;
+          cout << SUBTRACT && history << SUBTRACT;
+          cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
           while (1)
           {
               if (cin.good())
@@ -127,25 +132,25 @@ int main() {
               else {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << ACTUALNUM;
-                  cin >> num1 >> num2;
+                  cout << ACTUALNUM && history << ACTUALNUM;
+                  cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
               }
           }
-          cout << num1 << " - " << num2 << " = " << num1 - num2 << "\n";
-          cout << WHATELSE;
-          cin >> calcmode;
+          cout << num1 << " - " << num2 << " = " << num1 - num2 << "\n" && history << num1 << " - " << num2 << " = " << num1-num2 << '\n';
+          cout << WHATELSE && history << WHATELSE;
+          cin >> calcmode && history << calcmode << '\n';
           if (cin.fail())
           {
               cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+              cout << VALCALC && history << VALCALC;
+              cin >> calcmode && history << calcmode << '\n';
           }
       }
       else if (calcmode == "6" || calcmode == "squareroot" || calcmode == "sq")
       {
-          cout << SQUAREROOT;
-          cin >> num1; // reads 1 floating point value into num1
-          while (1)
+          cout << SQUAREROOT && history << SQUAREROOT;
+          cin >> num1 && history << num1 << '\n';
+          while(1)
           {
               if (cin.good())
               {
@@ -155,25 +160,24 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << ACTUALNUM;
-                  cin >> num1;
+                  cout << ACTUALNUM && history << ACTUALNUM;
+                  cin >> num1 && history << num1 << '\n';
               }
           }
-          cout << "The Square Root of " << num1 << " is " << sqrt(num1) << ".\n";
-
-          cout << WHATELSE;
-          cin >> calcmode;
+          cout << "The Square Root of " << num1 << " = " << sqrt(num1) << ".\n" && history << "The Square Root of " << num1 << " = " << sqrt(num1) << ".\n";
+          cout << WHATELSE && history << WHATELSE;
+          cin >> calcmode && history << calcmode << '\n';
           if (cin.fail())
           {
               cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+              cout << VALCALC && history << VALCALC;
+              cin >> calcmode && history << calcmode << '\n';
           }
       }
       else if (calcmode == "7" || calcmode == "exponent" || calcmode == "e")
       {
-          cout << EXPONENT;
-              cin >> num1 >> num2; // reads 1 floating point value into num1 and num2 each
+          cout << EXPONENT && history << EXPONENT;
+              cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
           while (1)
           {
               if (cin.good())
@@ -184,18 +188,18 @@ int main() {
               {
                   cin.clear();
                   cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                  cout << ACTUALNUM;
-                  cin >> num1 >> num2;
+                  cout << ACTUALNUM && history << ACTUALNUM;
+                  cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
               }
           }
-          cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << "\n";
-          cout << WHATELSE;
-          cin >> calcmode;
+          cout << num1 << " ^ " << num2 << " = " << pow(num1, num2) << "\n" && history << num1 << "^" << num2 << " = " << pow(num1,num2) << '\n';
+          cout << WHATELSE && history << WHATELSE;
+          cin >> calcmode && history << calcmode << '\n';
           if (cin.fail())
           {
               cin.clear();
-              cout << VALCALC;
-              cin >> calcmode;
+              cout << VALCALC && history << VALCALC;
+              cin >> calcmode && history << calcmode << '\n';
           }
       }
       else if (calcmode == "8" || calcmode == "trigfunctions" || calcmode == "t")
@@ -538,9 +542,10 @@ int main() {
       }
       else
       {
-        cout << VALCALC;
-        cin >> calcmode;
+        cout << VALCALC && history << VALCALC;
+        cin >> calcmode && history << calcmode << '\n';
       }
   }
   return 0;
+  void close();
 }
