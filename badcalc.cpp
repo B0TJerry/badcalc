@@ -39,7 +39,7 @@ int main() {
       {
         cout << MULTIPLY && history << MULTIPLY;
           cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
-          while (1)
+          while (true)
           {
               if (cin.good())
               {
@@ -68,7 +68,7 @@ int main() {
       {
           cout << DIVIDE && history << DIVIDE;
           cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
-          while (1)
+          while (true)
           {
               if (cin.good())
               {
@@ -96,7 +96,7 @@ int main() {
       {
           cout << ADD && history << ADD;
           cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
-          while (1)
+          while (true)
           {
               if (cin.good())
               {
@@ -123,7 +123,7 @@ int main() {
       {
           cout << SUBTRACT && history << SUBTRACT;
           cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
-          while (1)
+          while (true)
           {
               if (cin.good())
               {
@@ -150,7 +150,7 @@ int main() {
       {
           cout << SQUAREROOT && history << SQUAREROOT;
           cin >> num1 && history << num1 << '\n';
-          while(1)
+          while(true)
           {
               if (cin.good())
               {
@@ -178,7 +178,7 @@ int main() {
       {
           cout << EXPONENT && history << EXPONENT;
               cin >> num1 >> num2 && history << num1 << " " << num2 << '\n';
-          while (1)
+          while (true)
           {
               if (cin.good())
               {
@@ -212,7 +212,7 @@ int main() {
         string message = DEGMES;
         cout << TRIGMENU;
         cin >> calcmode2;
-         while (1)
+         while (true)
         {
           if (cin.good())
           {
@@ -228,7 +228,7 @@ int main() {
         }
         cout << RADORDEG;
         cin >> calcmode3;
-        while (1)
+        while (true)
         {
           if (cin.good())
           {
@@ -256,7 +256,7 @@ int main() {
           type = " degrees";
           message = RADMES;
         }
-        while (1)
+        while (true)
         {
           if (calcmode2 == "0" || calcmode2 == "back" || calcmode2 == "b")
           {
@@ -269,7 +269,7 @@ int main() {
 
             cout << message;
             cin >> num1;
-            while (1)
+            while (true)
             {
               if (cin.good())
               {
@@ -298,7 +298,7 @@ int main() {
           {
             cout << message;
             cin >> num1;
-            while (1)
+            while (true)
             {
               if (cin.good())
               {
@@ -327,7 +327,7 @@ int main() {
           {
             cout << message;
             cin >> num1;
-            while (1)
+            while (true)
             {
               if (cin.good())
               {
@@ -363,7 +363,7 @@ int main() {
           string calcmode2 = "0";
           cout << GEOMENU;
           cin >> calcmode2;
-          while (1)
+          while (true)
           {
               if (calcmode2 == "0" || calcmode2 == "back" || calcmode2 == "b")
               {
@@ -376,7 +376,7 @@ int main() {
                   double num3 = 0, num4 = 0;
                   cout << SUMOFFINITE;
                   cin >> num1 /*R*/ >> num2 /*A1*/ >> num3 /*N*/;
-                  while (1)
+                  while (true)
                   {
                       if (cin.good())
                       {
@@ -406,7 +406,7 @@ int main() {
                   double num3 = 0, num4 = 0;
                   cout << GEOSEQRULE;
                   cin >> num1 /*R*/ >> num2 /*A w/o the n*/ >> num3 /*n*/;
-                  while (1)
+                  while (true)
                   {
                       if (cin.good())
                       {
@@ -437,7 +437,7 @@ int main() {
               {
                   cout << SUMOFINF;
                   cin >> num1 >> num2;
-                  while (1)
+                  while (true)
                   {
                       if (cin.good())
                       {
@@ -471,7 +471,7 @@ int main() {
       }
       else if (calcmode == "10" || calcmode == "Probability" || calcmode == "p")
       {
-          while (1) {
+          while (true) {
           string calcmode2 = "0";
           cout << PROBMENU;
           cin >> calcmode2;
@@ -485,7 +485,7 @@ int main() {
           {
               cout << PAB;
               cin >> num1 >> num2;
-              while (1)
+              while (true)
               {
                   if (cin.good())
                   {
@@ -513,7 +513,7 @@ int main() {
           {
               cout << PAANDB;
               cin >> num1 >> num2;
-              while (1)
+              while (true)
               {
                   if (cin.good())
                   {
